@@ -20,8 +20,8 @@ jobs:
       - name: Install clojure tools
         uses: DeLaGuardo/setup-clojure@13.4
         with:
-          cli: 1.11.3.1165
-          clj-kondo: 2024.05.31
+          cli: 1.12.2.1565
+          clj-kondo: 2025.07.28
 
       # 2. Запускаем форматирование (cljfmt)
       - name: Format code
