@@ -22,7 +22,7 @@ jobs:
         with:
           cli: 1.11.3.1165
           clj-kondo: 2024.05.31
-          cljfmt: 0.10.3
+          cljfmt: 0.13.1
 
       # 2. Запускаем форматирование (cljfmt)
       - name: Format code
