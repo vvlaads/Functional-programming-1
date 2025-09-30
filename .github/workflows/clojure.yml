@@ -1,0 +1,37 @@
+name: Clojure CI
+
+on: [push, pull_request]
+
+jobs:
+  build-test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Получаем код
+      - uses: actions/checkout@v3
+
+      # 2. Устанавливаем Java (Clojure требует JVM)
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # 3. Устанавливаем Clojure CLI
+      - name: Install Clojure CLI
+        run: |
+          curl -O https://download.clojure.org/install/linux-install-1.11.3.1165.sh
+          chmod +x linux-install-1.11.3.1165.sh
+          sudo ./linux-install-1.11.3.1165.sh
+
+      # 4. Запускаем форматирование (cljfmt)
+      - name: Format code
+        run: clojure -M:fmt
+
+      # 5. Запускаем линт (clj-kondo)
+      - name: Lint code
+        run: clojure -M:lint
+
+      # 6. Прогоняем тесты
+      - name: Run tests
+        run: clojure -M:test
