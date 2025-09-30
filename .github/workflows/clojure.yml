@@ -5,26 +5,20 @@ on: [push, pull_request]
 jobs:
   build-test-lint:
     runs-on: ubuntu-latest
+    container: clojure:temurin-17-lein-2.10.0
 
     steps:
       # 1. Получаем код
       - uses: actions/checkout@v3
 
-      # 2. Устанавливаем Clojure через официальный Action
-      - name: Setup Clojure
-        uses: DeLaGuardo/setup-clojure@12
-        with:
-          cli: 1.11.3.1165
-          tools-deps: true
-
-      # 3. Запускаем форматирование (cljfmt)
+      # 2. Запускаем форматирование (cljfmt)
       - name: Format code
         run: clojure -M:fmt
 
-      # 4. Запускаем линт (clj-kondo)
+      # 3. Запускаем линт (clj-kondo)
       - name: Lint code
         run: clojure -M:lint
 
-      # 5. Прогоняем тесты
+      # 4. Прогоняем тесты
       - name: Run tests
         run: clojure -M:test
