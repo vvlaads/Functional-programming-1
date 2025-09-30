@@ -8,7 +8,7 @@
     :else (+ (fibonacci (dec n)) (fibonacci (- n 2)))))
 
 (defn sum-even-fibonacci [n]
-  (let [current_number (fibonacci n)]
-    (cond (> current_number 4000000) 0
-          (even? current_number) (+ current_number (sum-even-fibonacci (inc n)))
+  (let [current-number (fibonacci n)]
+    (cond (> current-number 4000000) 0
+          (even? current-number) (+ current-number (sum-even-fibonacci (inc n)))
           :else (sum-even-fibonacci (inc n)))))

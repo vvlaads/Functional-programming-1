@@ -10,14 +10,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int current_number = 0;
+        int currentNumber = 0;
         int result = 0;
         int n = 0;
 
-        while (current_number <= 4_000_000) {
-            current_number = fibonacci(n);
-            if (current_number % 2 == 0) {
-                result += current_number;
+        while (currentNumber <= 4_000_000) {
+            currentNumber = fibonacci(n);
+            if (currentNumber % 2 == 0) {
+                result += currentNumber;
             }
             n++;
         }
