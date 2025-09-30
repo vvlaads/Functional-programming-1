@@ -15,7 +15,7 @@ jobs:
       - name: Install system dependencies
         run: |
           apt-get update
-          apt-get install -y unzip curl
+          apt-get install -y git unzip curl
 
       # 3. Устанавливаем Java
       - name: Prepare java
