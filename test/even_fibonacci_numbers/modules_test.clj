@@ -1,6 +1,6 @@
-(ns even-fibonacci-numbers.loop-test
+(ns even-fibonacci-numbers.modules-test
   (:require [clojure.test :refer [deftest is testing]]
-            [even-fibonacci-numbers.loop :refer [sum-even-fibonacci]]))
+            [even-fibonacci-numbers.modules :refer [sum-even-fibonacci]]))
 
 (deftest sum-even-fibonacci-test
   (testing

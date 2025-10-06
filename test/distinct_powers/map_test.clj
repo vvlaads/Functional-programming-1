@@ -1,6 +1,6 @@
-(ns distinct-powers.loop-test
+(ns distinct-powers.map-test
   (:require [clojure.test :refer [deftest is testing]]
-            [distinct-powers.loop :refer [count-distinct-terms]]))
+            [distinct-powers.map :refer [count-distinct-terms]]))
 
 (deftest count-distinct-terms-test
   (testing
